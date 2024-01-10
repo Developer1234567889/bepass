@@ -6,9 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_widget_from_html_core/flutter_widget_from_html_core.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '../../states/widgets/item/default_card.dart';
-
-// TODO: need to make more beautiful
+import 'package:defacto/states/widgets/item/default_card.dart';
 
 class AboutScreen extends StatefulWidget {
   const AboutScreen({super.key});
@@ -51,7 +49,7 @@ class _AboutScreenState extends State<AboutScreen> {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 DefaultCard(
-                  child: _nekoBoxWidget(context),
+                  child: _bepassWidget(context),
                 ),
                 DefaultCard(child: _appInfoWidget(context)),
                 DefaultCard(child: _projectWidget(context)),
@@ -64,9 +62,9 @@ class _AboutScreenState extends State<AboutScreen> {
     );
   }
 
-  Widget _nekoBoxWidget(BuildContext context) {
+  Widget _bepassWidget(BuildContext context) {
     final data = DefaultCardMiscData(
-      title: "NekoBox for Android",
+      title: "Bepass Mobile",
       body: "The universal proxy toolchain for Android. written in Kotlin",
     );
     return Column(
@@ -87,11 +85,11 @@ class _AboutScreenState extends State<AboutScreen> {
           height: 14,
         ),
         Text(
-          data.body,
-          style: Theme
-              .of(context)
-              .textTheme
-              .labelLarge
+            data.body,
+            style: Theme
+                .of(context)
+                .textTheme
+                .labelLarge
         ),
       ],
     );
@@ -109,8 +107,8 @@ class _AboutScreenState extends State<AboutScreen> {
           height: 14,
         ),
         DefaultListItem(
-          title: "Version (sing-box)",
-          body: "sing-box-extra: 1.4.0-rc3\ngo1.21.0@android/arm64\nwith_contract...",
+          title: "Version (bepass-core)",
+          body: "bepass-extra: 1.4.0-rc3\ngo1.21.0@android/arm64\nwith_contract...",
           prefixWidget: Icon(Icons.add_chart),
         ),
         SizedBox(
@@ -173,7 +171,7 @@ class _AboutScreenState extends State<AboutScreen> {
     return '''
     <h4>License</h4>
     <p style="font-size: 12px;color: #605b5b;">
-    Copyright (C) 2022 by nekohasekai &lt;<a href="mailto:contact-sagernet@sekai.icu">contact-sagernet@sekai.icu</a>&gt;<br><br>
+    Copyright (C) 2023 by bepass-org &lt;<a href="mailto:contact-sagernet@sekai.icu">contact-bepass@bepass.org</a>&gt;<br><br>
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by

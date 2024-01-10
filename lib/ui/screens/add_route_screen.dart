@@ -1,7 +1,7 @@
 import 'dart:collection';
 
 import 'package:defacto/data/models/add_route_model.dart';
-import 'package:defacto/states/widgets/item/default_list_item.dart';
+import 'package:defacto/ui/widgets/card/default_list_item.dart';
 import 'package:flutter/material.dart';
 
 class AddRouteScreen extends StatefulWidget {

@@ -1,12 +1,12 @@
-import 'package:defacto/states/widgets/item/default_card_misc_data.dart';
-import 'package:defacto/states/widgets/item/default_list_item.dart';
+import 'package:defacto/ui/widgets/card/default_card_misc_data.dart';
+import 'package:defacto/ui/widgets/card/default_list_item.dart';
 import 'package:defacto/ui/screens/configuration.dart';
 import 'package:defacto/ui/widgets/main_drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_widget_from_html_core/flutter_widget_from_html_core.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import 'package:defacto/states/widgets/item/default_card.dart';
+import 'package:defacto/ui/widgets/card/default_card.dart';
 
 class AboutScreen extends StatefulWidget {
   const AboutScreen({super.key});
@@ -31,10 +31,7 @@ class _AboutScreenState extends State<AboutScreen> {
       child: Scaffold(
         appBar: AppBar(
           iconTheme: const IconThemeData(color: Colors.white),
-          backgroundColor: Theme
-              .of(context)
-              .colorScheme
-              .primary,
+          backgroundColor: Theme.of(context).colorScheme.primary,
           title: const Text("About", style: TextStyle(color: Colors.white)),
         ),
         drawer: const MainDrawer(),
@@ -48,9 +45,7 @@ class _AboutScreenState extends State<AboutScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                DefaultCard(
-                  child: _bepassWidget(context),
-                ),
+                DefaultCard(child: _bepassWidget(context)),
                 DefaultCard(child: _appInfoWidget(context)),
                 DefaultCard(child: _projectWidget(context)),
                 DefaultCard(child: HtmlWidget(_htmlContent(), onTapUrl: _launchUrl)),
@@ -72,25 +67,15 @@ class _AboutScreenState extends State<AboutScreen> {
       children: [
         Text(
           data.title,
-          style: Theme
-              .of(context)
-              .textTheme
-              .titleSmall!
-              .copyWith(
-            fontWeight: FontWeight.bold,
-            color: Colors.black,
-          ),
+          style: Theme.of(context).textTheme.titleSmall!.copyWith(
+                fontWeight: FontWeight.bold,
+                color: Colors.black,
+              ),
         ),
         const SizedBox(
           height: 14,
         ),
-        Text(
-            data.body,
-            style: Theme
-                .of(context)
-                .textTheme
-                .labelLarge
-        ),
+        Text(data.body, style: Theme.of(context).textTheme.labelLarge),
       ],
     );
   }
@@ -137,14 +122,10 @@ class _AboutScreenState extends State<AboutScreen> {
       children: [
         Text(
           'Project',
-          style: Theme
-              .of(context)
-              .textTheme
-              .titleSmall!
-              .copyWith(
-            fontWeight: FontWeight.bold,
-            color: Colors.black,
-          ),
+          style: Theme.of(context).textTheme.titleSmall!.copyWith(
+                fontWeight: FontWeight.bold,
+                color: Colors.black,
+              ),
         ),
         const SizedBox(
           height: 20,

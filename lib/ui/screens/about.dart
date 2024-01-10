@@ -31,10 +31,7 @@ class _AboutScreenState extends State<AboutScreen> {
       child: Scaffold(
         appBar: AppBar(
           iconTheme: const IconThemeData(color: Colors.white),
-          backgroundColor: Theme
-              .of(context)
-              .colorScheme
-              .primary,
+          backgroundColor: Theme.of(context).colorScheme.primary,
           title: const Text("About", style: TextStyle(color: Colors.white)),
         ),
         drawer: const MainDrawer(),
@@ -48,9 +45,7 @@ class _AboutScreenState extends State<AboutScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                DefaultCard(
-                  child: _bepassWidget(context),
-                ),
+                DefaultCard(child: _bepassWidget(context)),
                 DefaultCard(child: _appInfoWidget(context)),
                 DefaultCard(child: _projectWidget(context)),
                 DefaultCard(child: HtmlWidget(_htmlContent(), onTapUrl: _launchUrl)),
@@ -72,25 +67,15 @@ class _AboutScreenState extends State<AboutScreen> {
       children: [
         Text(
           data.title,
-          style: Theme
-              .of(context)
-              .textTheme
-              .titleSmall!
-              .copyWith(
-            fontWeight: FontWeight.bold,
-            color: Colors.black,
-          ),
+          style: Theme.of(context).textTheme.titleSmall!.copyWith(
+                fontWeight: FontWeight.bold,
+                color: Colors.black,
+              ),
         ),
         const SizedBox(
           height: 14,
         ),
-        Text(
-            data.body,
-            style: Theme
-                .of(context)
-                .textTheme
-                .labelLarge
-        ),
+        Text(data.body, style: Theme.of(context).textTheme.labelLarge),
       ],
     );
   }
@@ -137,14 +122,10 @@ class _AboutScreenState extends State<AboutScreen> {
       children: [
         Text(
           'Project',
-          style: Theme
-              .of(context)
-              .textTheme
-              .titleSmall!
-              .copyWith(
-            fontWeight: FontWeight.bold,
-            color: Colors.black,
-          ),
+          style: Theme.of(context).textTheme.titleSmall!.copyWith(
+                fontWeight: FontWeight.bold,
+                color: Colors.black,
+              ),
         ),
         const SizedBox(
           height: 20,

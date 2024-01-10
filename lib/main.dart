@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:defacto/ui/screens/about.dart';
+import 'package:defacto/ui/screens/add_route_screen.dart';
 import 'package:defacto/ui/screens/configuration.dart';
 import 'package:defacto/ui/screens/logs.dart';
 import 'package:defacto/ui/screens/routing.dart';
@@ -8,6 +9,7 @@ import 'package:defacto/ui/screens/settings.dart';
 import 'package:defacto/ui/skeleton/skeleton_screen.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_displaymode/flutter_displaymode.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:hive_flutter/adapters.dart';
@@ -51,6 +53,11 @@ class MyApp extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final ThemeModeState currentTheme = ref.watch(themeProvider);
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+      statusBarColor: currentTheme.themeMode == ThemeMode.dark
+          ? darkTheme.appBarTheme.backgroundColor
+          : lightTheme.appBarTheme.backgroundColor,
+    ));
 
     return MaterialApp(
       title: 'Flutter Production Boilerplate',
@@ -69,6 +76,7 @@ class MyApp extends ConsumerWidget {
         '/settings': (context) => const SettingsScreen(),
         '/logs': (context) => const LogsScreen(),
         '/about': (context) => const AboutScreen(),
+        '/addRouteScreen': (context) => const AddRouteScreen(),
       },
       onGenerateRoute: (settings) {
         // If the route is not found, just get moved to the skeleton screen
